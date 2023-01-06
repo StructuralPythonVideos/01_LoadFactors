@@ -134,17 +134,11 @@ r1_results = lf.Load(*[
 
 moment_envelope_max = lf.factored_max(moment_results, load_combinations)
 moment_envelope_min = lf.factored_min(moment_results, load_combinations)
-moment_envelope_max = moment_envelope_max[moment_envelope_max != 0]
-moment_envelope_max = np.concatenate([[0], moment_envelope_max, [0]])
-moment_envelope_min = moment_envelope_min[moment_envelope_min != 0]
-moment_envelope_min = np.concatenate([[0], moment_envelope_min, [0]])
+
 
 shear_envelope_max = lf.factored_max(shear_results, load_combinations)
 shear_envelope_min = lf.factored_min(shear_results, load_combinations)
-shear_envelope_max = shear_envelope_max[shear_envelope_max != 0]
-shear_envelope_max = np.concatenate([[0], shear_envelope_max, [0]])
-shear_envelope_min = shear_envelope_min[shear_envelope_min != 0]
-shear_envelope_min = np.concatenate([[0], shear_envelope_min, [0]])
+
 
 r0_max = lf.factored_max(r0_results, load_combinations)[0]
 r1_max = lf.factored_max(r1_results, load_combinations)[0]
@@ -170,15 +164,10 @@ st.write("### Factored Moment Diagram")
 lc_select = st.selectbox("Plot factored load case: ", load_combinations.keys())
 lc_combo = load_combinations[lc_select]
 moment_lc = lf.factor_load(np.array(moment_results).T, np.array(lc_combo))
-moment_lc = moment_lc[moment_lc != 0]
-moment_lc = np.concatenate([[0], moment_lc, [0]])
 shear_lc = lf.factor_load(np.array(shear_results).T, np.array(lc_combo))
-shear_lc = shear_lc[shear_lc != 0]
-shear_lc = np.concatenate([[0], shear_lc, [0]])
+
 
 fig, ax = plt.subplots(figsize=(8, 2))
-st.write(len(moment_envelope_max), len(moment_envelope_min))
-st.write(len(shear_envelope_max), len(shear_envelope_min))
 n_moment = len(moment_envelope_max)
 x_data = np.linspace(0, L_backspan + L_cantilever, n_moment)
 beam_line, = ax.plot(x_data, np.zeros(n_moment), 'k')
