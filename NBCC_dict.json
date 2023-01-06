@@ -1,0 +1,28 @@
+{
+    "LC1": {
+        "D_factor": 1.4
+    },
+    "LC2": {
+        "D_factor": 1.25,
+        "L_factor": 1.5
+    },
+    "LC2a": {
+        "D_factor": 0.9,
+        "L_factor": 1.5
+    },
+    "LC2b": {
+        "D_factor": 1.25,
+        "L_factor": 1.5,
+        "S_factor": 1.0
+    },
+    "LC2c": {
+        "D_factor": 1.25,
+        "L_factor": 1.5,
+        "W_factor": 1.0
+    },
+    "LC2d": {
+        "D_factor": 0.9,
+        "L_factor": 1.5,
+        "W_factor": 0.4
+    }
+}
