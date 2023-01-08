@@ -15,8 +15,7 @@ occupancies_dict = {
     "Rooftop Mech": lf.Load(D=8.5, L=0., S=0., W=0., E=0.),
 }
 
-st.write(pathlib.Path.cwd())
-with open("NBCC_vec_full.json") as file:
+with open("streamlit_app/NBCC_vec_full.json") as file:
     load_combinations = json.load(file)
 
 def analyze_beam(
