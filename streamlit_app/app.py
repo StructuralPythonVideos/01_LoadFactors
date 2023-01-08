@@ -88,7 +88,7 @@ p2_trib = st.sidebar.number_input("P2 Tributary area")
 a2_loc = st.sidebar.slider("a2 Location:", max_value = L_backspan + L_cantilever)
 st.sidebar.write("---")
 
-st.sidebar.image("logo-black.png")
+st.sidebar.image("streamlit_app/logo-black.png")
 
 beam_results = analyze_beam(
     L_backspan, 
