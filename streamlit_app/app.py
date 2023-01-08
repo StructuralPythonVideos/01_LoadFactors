@@ -52,7 +52,7 @@ def analyze_beam(
 
 st.write("# Factoring loads by occupancies")
 
-st.image("BeamDiagram.png")
+st.image("streamlit_app/BeamDiagram.png")
 
 st.sidebar.write("### Spans")
 L_backspan = st.sidebar.slider("Backspan length", min_value=3, max_value=20)
