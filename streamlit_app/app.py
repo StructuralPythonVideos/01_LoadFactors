@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import pycba as cba
 import loadfactors as lf
 import numpy as np
+import pathlib
 
 occupancies_dict = {
     "Residential": lf.Load(D=1.2, L=2.4, S=0., W=0., E=0.),
@@ -14,6 +15,7 @@ occupancies_dict = {
     "Rooftop Mech": lf.Load(D=8.5, L=0., S=0., W=0., E=0.),
 }
 
+st.write(pathlib.Path.cwd())
 with open("NBCC_vec_full.json") as file:
     load_combinations = json.load(file)
 
